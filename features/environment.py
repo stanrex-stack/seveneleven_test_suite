@@ -1,17 +1,23 @@
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
+from features.logger import myListner
+from selenium.webdriver.support.events import EventFiringWebDriver
 
-
-from python_selenium_automation.ultm_pckg.linda_florida.app.application import Application
+from app.application import Application
 
 def browser_init(context):
     """
     :param context: Behave context
     """
+
+    #     EventFiringWebDriver
+    # context.driver = EventFiringWebDriver(webdriver.Chrome(), myListner())
+
+
     # context.driver = webdriver.Chrome()
     # context.browser = webdriver.Safari()
-    # context.driver = webdriver.Firefox()
-    context.driver = webdriver.Edge()
+    context.driver = webdriver.Firefox()
+    # context.driver = webdriver.Edge()
 
 
     context.driver.maximize_window()
@@ -28,8 +34,7 @@ def browser_init(context):
 #   INCOGNITO
 #   options.add_argument("--incognito")
 
-#     EventFiringWebDriver
-#     context.driver = EventFiringWebDriver(webdriver.Chrome(), myListner())
+
 
 
 def before_scenario(context, scenario):

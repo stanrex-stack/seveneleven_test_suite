@@ -3,12 +3,12 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.support.select import Select
-# from python_selenium_automation.logger import logger
+from features.logger import logger
 
 class Page:
     def __init__(self, driver):
         self.driver = driver
-        self.base_url = 'https://www.7-eleven.com//'
+        self.base_url = 'https://www.7-eleven.com/'
         self.driver.wait = WebDriverWait(self.driver, 15)
         self.actions = ActionChains(self.driver)
         self.alerts = Alert(self.driver)
@@ -16,10 +16,11 @@ class Page:
 
 
     def open_page(self, url = ''):
-        # logger.info(f'Opened page {url}')
+        logger.info(f'Opened page {url}')
         self.driver.get(self.base_url + url)
 
     def click(self, *locator):
+        logger.info(f'found element {locator}')
         self.driver.find_element(*locator).click()
 
     def input(self, text: str, *locator):

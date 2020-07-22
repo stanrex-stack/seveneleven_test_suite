@@ -14,9 +14,9 @@ def browser_init(context):
     # context.driver = EventFiringWebDriver(webdriver.Chrome(), myListner())
 
 
-    # context.driver = webdriver.Chrome()
+    context.driver = webdriver.Chrome()
     # context.browser = webdriver.Safari()
-    context.driver = webdriver.Firefox()
+    # context.driver = webdriver.Firefox()
     # context.driver = webdriver.Edge()
 
 

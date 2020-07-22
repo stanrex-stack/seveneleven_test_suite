@@ -1,5 +1,6 @@
 from pages.main_page import MainPage
 from pages.main_header_page import MainPageHeader
+from pages.main_page_footer import MainPageFooter
 
 
 class Application:
